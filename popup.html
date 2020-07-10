@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {background-color: black;}
+select {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-padding-end: 15px;
+    -moz-padding-end: 15px;
+    -webkit-padding-start: 2px;
+    -moz-padding-start: 2px;
+    background-color: #16CBD8; /* Fallback color if gradients are not supported */
+    background-image: url(../images/select-arrow.png), -webkit-linear-gradient(top, #E5E5E5, #F4F4F4); /* For Chrome and Safari */
+    background-position: center right;
+    background-repeat: no-repeat;
+    border: 1px solid #AAA;
+    border-radius: 2px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+    color: #555;
+    font-family: Abel-Regular;
+    font-size: 16px;
+    margin: 0;
+    overflow: hidden;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+.row {
+  display: -ms-flexbox; /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap; /* IE10 */
+  flex-wrap: wrap;
+  margin: 0 -10px;
+}
+
+.col-25 {
+  -ms-flex: 12%; /* IE10 */
+  flex: 15%;
+}
+
+.col-50 {
+  -ms-flex: 15%; /* IE10 */
+  flex: 25%;
+}
+
+.col-75 {
+  -ms-flex: 36%; /* IE10 */
+  flex: 50%;
+}
+
+.col-25,
+.col-50,
+.col-75 {
+  padding: 0 14px;
+}
+
+.container {
+  background-color: #bfbfbf;
+  padding: 10px 200px 10px 300px;
+  border: 1px solid white;
+  border-radius: 2px;
+}
+.container2 {
+  background-color: #bfbfbf;
+  padding: 20px 200px 10px 80px;
+  border: 1px solid white;
+  border-radius: 2px;
+}
+
+input[type=text] {
+  width: 50%;
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+  margin-bottom: 5px;
+  display: block;
+}
+
+.icon-container {
+  margin-bottom: 5px;
+  padding: 70px 0;
+  font-size: 37px;
+}
+
+.btn {
+  background-color: #e30e15;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 30%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 25;
+  text-align: center;
+  line-height: 20px;
+}
+
+.btn:hover {
+  background-color: #00fff7;
+}
+
+span.price {
+  float: middle;
+  color: grey;
+}
+
+@media (max-width: 8px) {
+  .row {
+    position: left;
+
+  }
+  .col-25 {
+    margin-bottom: 15px;
+  }
+}
+
+body {
+  min-width: 660px;
+  max-width: 200%;
+  min-height: 660px;
+  max-height: 60%;
+  position: relative;
+  vertical-align:middle;
+  font-family: Abel-Regular;
+  font-size: 20px
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+Lukoo_Banner {
+  position: relative;
+  vertical-align:middle;
+}
+</style>
+</head>
+
+<body>
+<br>
+<img src="Lukoo_Banner.png" class="center">
+
+<br><br>
+
+<div class="row" width=50px;>
+  <div class="col-75">
+    <div class="container">
+    <form id="selection_form" onsubmit="return false;">
+      <form action="/action_page.php">
+
+        <div class="row">
+          <div class="col-50">
+            <h3>Address</h3>
+            <label for="fname"><i class="f-user"></i> Full Name</label>
+            <input type="text" id="fname" name="firstname" placeholder="John M. Doe">
+            <label for="email"><i class="fa fa-envelope"></i> Email</label>
+            <input type="text" id="email" name="email" placeholder="john@example.com">
+            <label for="fphonenumber"><i class="fa fa-user"></i> Phone Number</label>
+            <input type="text" id="fphone" name="phonenumber" placeholder="3565632030">
+            <label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+            <input type="text" id="adr" name="address" placeholder="542 W. 15th Street">
+            <label for="city"><i class="fa fa-institution"></i> City</label>
+            <input type="text" id="city" name="city" placeholder="New York">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="state">State</label>
+                <input type="text" id="state" name="state" placeholder="NY">
+              </div>
+              <div class="col-50">
+                <label for="zip">Zip</label>
+                <input type="text" id="zip" name="zip" placeholder="10001">
+              </div>
+            </div>
+          </div>
+
+          <div class="col-50">
+            <h3>Payment</h3>
+            <label for="fcards">Accepted Cards</label>
+            <div>
+              <form>
+              <select name="cardtype">
+                <option value="cvalue1">Visa</option>
+                <option value="cvalue2">MasterCard</option>
+                <option value="cvalue3">Discover</option>
+                <option value="cvalue4">American Express</option>
+              </select>
+              </form>
+            </div>
+            <label for="cname">Name on Card</label>
+            <input type="text" id="cname" name="cardname" placeholder="John Doe">
+            <label for="ccnum">Credit card number</label>
+            <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444">
+            <label for="expmonth">Exp Month</label>
+            <input type="text" id="expmonth" name="expmonth" placeholder="01">
+
+            <div class="row">
+              <div class="col-50">
+                <label for="expyear">Exp Year</label>
+                <input type="text" id="expyear" name="expyear" placeholder="2020">
+              </div>
+              <div class="col-50">
+                <label for="cvv">CVV</label>
+                <input type="text" id="cvv" name="cvv" placeholder="352">
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <label>
+          <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+        </label>
+        <div type"submit" id="button" class="btn">Run Task</div>
+      </form>
+    </div>
+  </div>
+
+<div class="row">
+  <div class="container2">
+  <h3>Setup</h3>
+  <form action="/naming_page.php">
+  <label for="fname">Item name:</label><br>
+  <input type="text" id="iname" name="fname" placeholder="Motion Logo"><br>
+  <label for="lname">Item color:</label><br>
+  <input type="text" id="icolor" name="lname" placeholder="Red"><br><br>
+</form>
+<h3>Size</h3>
+<form>
+<select name="Size">
+  <option value="szvalue0">Clothing Size</option>
+  <option value="szvalue1">Small</option>
+  <option value="szvalue2">Medium</option>
+  <option value="szvalue3">Large</option>
+  <option value="szvalue4">XLarge</option>
+</select>
+</form>
+<br>
+<form>
+<select name="Shoe_Size">
+  <option value="szvalue">Shoe Size</option>
+  <option value="szvalue0">5.5</option>
+  <option value="szvalue1">6</option>
+  <option value="szvalue2">6.6</option>
+  <option value="szvalue3">7</option>
+  <option value="szvalue4">7.5</option>
+  <option value="szvalue5">8</option>
+  <option value="szvalue6">8.5</option>
+  <option value="szvalue7">9</option>
+  <option value="szvalue8">9.5</option>
+  <option value="szvalue9">10</option>
+  <option value="szvalue10">10.5</option
+  <option value="szvalue11">11</option>
+  <option value="szvalue12">11.5</option>
+  <option value="szvalue13">12</option>
+  <option value="szvalue14">12.5</option>
+  <option value="szvalue15">13</option>
+</select>
+</form>
+<h3>Category</h3>
+<form>
+<select name="Size">
+  <option value="cavalue0">New</option>
+  <option value="cavalue1">Jackets</option>
+  <option value="cavalue2">Shirts</option>
+  <option value="cavalue3">Tops/Sweaters</option>
+  <option value="cavalue4">Sweatshirts</option>
+  <option value="cavalue5">Shorts</option>
+  <option value="cavalue6">T-Shirts</option>
+  <option value="cavalue7">Hats</option>
+  <option value="cavalue8">Bags</option>
+  <option value="cavalue9">Accessproes</option>
+  <option value="cavalue10">Shoes</option>
+  <option value="cavalue11">Skate</option>
+</select>
+</form>
+</form>
+</div>
+</div>
+
+</div>
+<p>
+<script type="text/javascript">
+var button = document.getElementById('button');
+
+button.onclick = function(){
+      window.open("https://www.supremenewyork.com/shop/all", "newWindow", "width=2000,height=2000");
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "addToBasket.js";
+      document.getElementsByTagName("head")[0].appendChild(script);
+      return false;
+}
+
+</script>
+</body>
+
+
+</html>
